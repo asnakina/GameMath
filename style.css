@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+#rootBoard {
+  width: 1000px;
+  height: 700px;
+  margin-left: 100px;
+  margin-top: 20px;
+  border: solid black;
+}
+
+.answersLineClass {
+  width: 1000px;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 20px;
+  border: solid green;
+}
+
+#questLineId {
+  width: 600px;
+  height: 140px;
+  margin-left: 100px;
+  border: solid red;
+}
+
+#characterId1 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}

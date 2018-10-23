@@ -3,9 +3,6 @@
 ## About the game:
 it's a browser version of the game, that is for fun, educating you, checking your IQ or just revising on knowledge.
 
-## Choose background (bonus: There might be subject of questions and a character and time settings and 2nd player)
-The user will have options for choosing background for the game.
-
 ## When the question pops up and a variety of answers
 Choose a correct answer and press a button, related to the answers
 
@@ -22,3 +19,7 @@ There are just for objects, your character won't crash into them.
 When your character gave correct answers on questions, it will be standing on the finish cube/cell.
 
 Good luck! Enjoy your game, design and your smartness!
+
+
+## Choose a background (bonus: There might be subject of questions and a character and time settings and 2nd player)
+The user will have options for choosing background for the game.
