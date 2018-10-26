@@ -6,46 +6,80 @@
 <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+    <div id="modal">
+      <h1>Name of the game</h1>
+      <div id="instruction">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div id="topicsDiv">
+        <a href="index.html">
+        <div class="topics" id="math">
+          <!-- <a href> where to place it?-->
+           <img src="images/genKnow2.jpg" alt="">
+           <span>General Knoweledge</span>
+        </div>
+      </a>
+
+        <a href="index.html">
+        <div class="topics" id="javascript">
+           <img src="images/math1.jpg" alt="">
+           <span>Math for kids</span>
+        </div>
+      </a>
+
+        <a href="index.html">
+        <div class="topics" id="generalKnowledge">
+           <img src="images/javaScript.jpg" alt="">
+           <span>Java Script</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
     <header>
       <h1>Name of the game</h1>
     </header>
     <!-- <div id="rootBoard"></div> -->
     <div id="answersContainer">
-      <div class="answersClass" id="top">Answer1</div>
+      <div class="answersClass" id="top"><p>Answer1</p></div>
       <div id="answ2answ4">
-        <div class="answersClass" id="left">Answer2</div>
-        <div class="answersClass" id="right">Answer3</div>
+        <div class="answersClass" id="left"><p>Answer2</p></div>
+        <div class="answersClass" id="right"><p>Answer3</p></div>
       </div>
-      <div class="answersClass" id="bottom">Answer4</div>
+      <div class="answersClass" id="bottom"><p>Answer4</p></div>
     </div>
 
-     <div id="messageLineId"></div>
+     <div id="messageLineId"><p></p></div>
 
       <div id="boxesContainer">
         <div id="box0" class="boxes">
           <p>Start position</p>
         </div>
-        <div id="questBox"></div>
+        <div id="questBox"><p></p></div>
         <div id="box6" class="boxes">
-          <p>Finish line after 6th question</p>
+          <p>Finish</p>
         </div>
 
         <div id="box1" class="boxes">
-          <p>1 step after 1st question</p>
+          <p>solved 1st question</p>
         </div>
         <div id="box2" class="boxes">
-          <p>2 step after 2nd question</p>
+          <p>solved 2nd question</p>
         </div>
         <div id="box3" class="boxes">
-          <p>3 step after 3rd question</p>
+          <p>solved 3rd question</p>
         </div>
         <div id="box4" class="boxes">
-          <p>4 step after 4th question</p>
+          <p>solved 4th question</p>
         </div>
         <div id="box5" class="boxes">
-          <p>5 step after 5th question</p>
+          <p>solved 5th question</p>
         </div>
       </div>
+     <!-- <div id="modal"> -->
     <script src="project1-game1.js" defer></script>
   </body>
 </html>
