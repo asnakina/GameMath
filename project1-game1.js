@@ -128,25 +128,25 @@ const questAnswVariety = {
 
 let questionsAnswers;
 
-function outOfModal(e){
-  debugger
+function outOfModal(e) {
+  // debugger
   e.preventDefault();
-  //this - it's e.currentTarget
+  //"this" - it's "e.currentTarget"
   //we match id names and names of topics
   questionsAnswers = questAnswVariety[this.id];
   console.log(this.id);
   document.getElementById('modal').style.visibility = 'hidden';
   showQuestAnsw();
 }
-document.querySelectorAll('.topics').forEach(oneOftopics => {
-oneOftopics.addEventListener('click', outOfModal);
+  document.querySelectorAll('.topics').forEach(oneOftopics => {
+  oneOftopics.addEventListener('click', outOfModal);
 });
 
 function pickTopic(topic) {
   questionsAnswers = questAnswVariety[topic];
 }
 
-document.querySelector('#messageLineId p').textContent = "Welcome to the Game!"
+  document.querySelector('#messageLineId p').textContent = "Welcome to the Game!"
 
 //Creating start position and characters;
 function placeCharacter(place) {
@@ -155,32 +155,42 @@ function placeCharacter(place) {
   //let startBox = document.querySelector('#boxId${i+1}')
   document.querySelector('#box0').appendChild(character);
 }
-placeCharacter();
+  placeCharacter();
   let character = document.querySelector('#characterId');
 
 //Placing questions into question field
 function showQuestAnsw() {
   qBox.innerText = questionsAnswers[currentQuestion].question;
-  for(let i = 0; i <questionsAnswers[currentQuestion].choices.length; i++){
+  for(let i = 0; i <questionsAnswers[currentQuestion].choices.length; i++) {
   answersElem[i].innerHTML = questionsAnswers[currentQuestion].choices[i];
   }
 }
 // showQuestAnsw();
 
 function matchGuess(value) {
-  if(value === questionsAnswers[currentQuestion].correctAnswer.toString()){
+  if(value === questionsAnswers[currentQuestion].correctAnswer.toString()) {
   //console.log('works');
   document.querySelector('#messageLineId p').textContent = "That is correct answer!"
   //console.log('Correct!Congratulations!');
   nextQuestion();
   }
-  else if (!shownHint){
+  else if (!shownHint) {
   hintAppears()
   console.log('hint is here')
   }
   else {
   document.querySelector('#messageLineId p').textContent = `That was incorrect answer again. Game over. Correct answer was: ${questionsAnswers[currentQuestion].correctAnswer}`
-  qBox.innerText = "Refresh page to start over"
+  qBox.innerText = "Click to pick a new topic"
+  
+  //qBox.addEventListener('click', ()=>location.reload());
+  console.log('locat.reload works');
+
+    // let button = document.createElement('div');
+    // button.id = "buttonId";
+    // document.querySelector('#buttonId').appendChild(character);
+    // qBox.innerText = document.querySelector('#')
+    // location.reload();
+
   // console.log('Game over');
   // console.log('Showing the correct answer');
   for(let i = 0; i < 4; i++) {
@@ -200,34 +210,38 @@ document.addEventListener('keydown', (e) => {
       value = left.innerText
       // console.log(value);
        matchGuess(value)
+       // animationFunction();
        break;
     case 38:
        const top = document.getElementById('top');
        value = top.innerText
        // console.log(value);
         matchGuess(value)
+        // animationFunction();
        break;
    case 39:
        const right = document.querySelector('#right');
        value = right.innerText
        matchGuess(value)
+       // animationFunction();
        break;
    case 40:
        const down = document.querySelector('#bottom');
        value = down.innerText
        matchGuess(value)
+       // animationFunction();
        break;
   }
-})
+});
 
 function start() {
-  debugger
+  // debugger
   //to hide text on start box when the game begins
   const currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
   currentQuestionBox.querySelector('p').classList.add('hidden');
 }
-  // document.addEventListener('keydown', e);
-// }
+  //document.addEventListener('keydown', e);
+  //}
 
 function end() {
   gameOver = true;
@@ -235,10 +249,10 @@ function end() {
 }
 
 function nextQuestion() {
-//first - finding the current box with the character
-//second - we find <p> inside that box, this <p> has class "hidden"
-//we remove that class, then we increase currentQuestion by 1
-//and add class 'hidden' to <p> of new current box
+  //first - finding the current box with the character
+  //second - we find <p> inside that box, this <p> has class "hidden"
+  //we remove that class, then we increase currentQuestion by 1
+  //and add class 'hidden' to <p> of new current box
   let currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
   currentQuestionBox.querySelector('p').classList.remove('hidden');
   currentQuestionBox.removeChild(character);
@@ -248,10 +262,9 @@ function nextQuestion() {
   currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
   currentQuestionBox.querySelector('p').classList.add('hidden');
   currentQuestionBox.appendChild(character);
+  //document.querySelector(`#box${currentQuestion}`).appendChild(character);
 
-  // document.querySelector(`#box${currentQuestion}`).appendChild(character);
-
-  if(currentQuestion === questionsAnswers.length){
+  if(currentQuestion === questionsAnswers.length) {
     // gameover = true;
     victory();
   }
@@ -289,33 +302,34 @@ function hintAppears() {
  //Create Welcome page with 3 options of topics: "JavaScript", "general knoweledge", "nature".
  //Add some animations to characters
 
-// Trying to use animation through JS
-function animationFunction() {
-let animation = setInterval(function(){
-  if (character.offsetLeft > 100){
-  // console.log(character.offsetLeft);
-  clearInterval (animation);
-  let animation2 = setInterval(function() {
-    if (character.offsetLeft < 20) {
-      clearInterval(animation2);
-    } else {
-      character.style.left = character.offsetLeft - 1 + 'px';
-    }
-  }, 20);
-}
-else {
-  console.log(character.offsetLeft);
-  character.style.left = character.offsetLeft + 1 + 'px';
-}
-}, 20);
-}
-animationFunction()
+ //Trying to use animation through JS
+// function animationFunction() {
+//   // debugger
+// let animation = setInterval(function(){
+//   if (character.offsetLeft > 100){
+//   console.log(character.offsetLeft);
+//   clearInterval (animation);
+//   let animation2 = setInterval(function() {
+//     if (character.offsetLeft < 20) {
+//       clearInterval (animation2);
+//     } else {
+//       character.style.left = character.offsetLeft - 1 + 'px';
+//     }
+//   }, 20);
+// }
+// else {
+//   console.log(character.offsetLeft);
+//   character.style.left = character.offsetLeft + 1 + 'px';
+//   }
+//  }, 20);
+// }
+// animationFunction();
 
 
 // function chooseTopics(value) {
 // document.querySelector('#characterId').addEventListener('click', nextQuestion);
-//   if(value === questionsAnswers[currentQuestion].correctAnswer.toString()){
-//   //console.log('works');
+// if(value === questionsAnswers[currentQuestion].correctAnswer.toString()){
+//console.log('works');
 
 // Use click/move action: document.querySelector('#characterId').addEventListener('click', nextQuestion);
 
@@ -329,4 +343,3 @@ animationFunction()
 //     hintAppears();
 //   }
 //  }
-//Think about second player
