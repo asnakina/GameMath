@@ -4,7 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* background-size: cover; */
   box-sizing: border-box;
 }
 
@@ -16,12 +15,8 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
-  height: 100%;
-  width: 100%;
-  /* margin: 0 auto; */
   /* visibility: hidden; */
   top: 0;
   left: 0;
@@ -30,26 +25,76 @@
   z-index: 1;
 }
 
-#modal > h1 {
+#headerModal {
+  display: flex;
+  justify-content: center;
+}
+
+#headerModal > i {
+  width: 10px;
+  height: 10px;
+}
+
+#headerModal > h1 {
   font-family: 'Mali', cursive;
   font-size: 50px;
+  margin-top: 50px;
+  color: white;
 }
 
 #instruction {
-  width: 80%;
+  width: 60%;
   height: 200px;
-  border: solid black;
+  margin-left: 150px;;
 }
 
-#instruction > p {
-  font-size: 30px;
+/* ul {
+    list-style: none;
 }
+
+li {
+    position: relative;
+    padding-left: 5px; /* text distance to icon */
+/* }
+
+li:before {
+        font-family: 'my-icon-font';
+        content: url('images/icon1.png');
+        position: absolute;
+        left: 10px;
+        top: 10px; */
+
+/* li:before {
+  content: url('images/icon1.png');
+  display: inline-block; */
+
+/* ul {
+    list-style-image: url('images/icon1.png');
+} */
+
+#instruction > li {
+  font-size: 35px;
+  font-family: 'Mali', cursive;
+  font-weight: bold;
+  /* display: inline-block; */
+  list-style: square;
+  /* list-style: url('images/icon1.png'); */
+  /* background-size: 70%;
+  background-repeat: no-repeat; */
+}
+
+/* .iconsClass {
+  width: 10px;
+  height: 10px;
+  background: url('images/icon1.png');
+  background-size: 67%;
+  background-repeat: no-repeat;
+} */
 
 #topicsDiv {
   width: 90vw;
   height: 50vh;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   justify-content: space-around;
   text-decoration: none;
@@ -70,33 +115,35 @@
 }
 
 span {
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
   font-family: 'Mali', cursive;
   color: black;
   text-decoration: none;
+  font-weight: bold;
 }
 
-span:hover {
+a {
+    text-decoration: none;
+}
+
+a span:hover {
   color: white;
-  font-size: 30px;
-  text-align: center;
-  font-family: 'Mali', cursive;
+  border-bottom: 2px solid black;
 }
 
                                 /* Main page of the game */
-body{
+body {
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgba(255, 121, 121,1.0) 0%, rgba(224, 86, 253,1.0) 30%, rgba(199,236,238, 1.0)60%, rgba(48, 51, 107,1.0)100%);)
   background-color: cover;
-  /*background-size: cover; */
 }
 
 section {
   background: white;
   width: 1220px;
-  height: 850px;
+  height: 100%;
   margin-left: 200px;
   border: solid black;
   display: flex;
@@ -104,9 +151,6 @@ section {
   align-items: center;
   margin: 0 auto;
   padding: 0px 10px;
-  /* padding: 20px; */
-/* background: linear-gradient(0deg, rgba(255, 121, 121,1.0) 0%, rgba(224, 86, 253,1.0) 30%, rgba(199,236,238, 1.0)60%, rgba(48, 51, 107,1.0)100%);)
-background-color: cover; */
 }
 
 header {
@@ -133,8 +177,6 @@ h1 {
   width: 100%;
   height: 280px;
   margin: 0 auto;
-  /* margin-left: 100px;
-  margin-top: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,17 +200,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: 30%; */
 }
 
 .answersClass > p {
   color: black;
 }
 
-#messageLineId{
+#messageLineId {
   width: 100%;
   height: 70px;
-  /* border: solid blue; */
   background: #F1E0C5;
   margin: 0 auto;
   font-size: 33px;
@@ -181,7 +221,7 @@ h1 {
   font-family: 'Mali', cursive;
 }
 
-#boxesContainer{
+#boxesContainer {
   width: 100%;
   height: 400px;
   display: flex;
@@ -204,6 +244,7 @@ h1 {
   align-items: center;
   justify-content: center;
   border-radius: 30%;
+  cursor: pointer;
 }
 
 .boxes {
@@ -258,17 +299,70 @@ h1 {
   display: none;
 }
 
-.buttonId {
-  width: 200px;
-  height: 50px;
-  border: solid black;
+.audioId {
+  visibility: hidden;
 }
-                          /* Media Queries */
-                          /* for mobile phones */
-@media (max-width: 500px)
-and (orientation: landscape) {
+                          /*Media Queries */
+                          /*for mobile phones */
+/* right now my screen 13inches = 780px */
+@media screen and (max-width: 1000px) {
+ #modal {
+  width: 100%;
+  height: 100%;
+ }
+ #headerModal {
+   order: 1;
+   width: 100%;
+ }
+ #instruction {
+   order: 2;
+ }
+
+ #topicsDiv {
+   order: 3;
+ }
+
+ body {
+  width: 100%;
+  height: 100%;
+ }
 }
 
-/* for large screens */
-@media (min-width: 1920px) {
+@media screen and (max-width: 640px) {
+
+  body {
+   width: 100%;
+   height: 100%;
+  }
+
+  #modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    order: 1;
+  }
+  #headerModal {
+    order: 1;
+    width: 100%;
+  }
+  #instruction {
+    order: 2;
+  }
+  #topicsDiv {
+    flex-direction: column;
+    height: 50vh;
+    order: 3;
+  }
+  .boxes {
+    flex-direction: column;
+    width: 30%;
+ }
+   section {
+     width: 100%;
+     height: 100%;
+   }
+   img {
+   width: 100%;
+ }
 }

@@ -1,28 +1,18 @@
 
                              Specification for the game:
-                             
- board appears with the design and a character  
 
- **Bonus: the set of choses appears too: choses of characters, choices of backgrounds,
+ 1. The site loads and the user will see the first page/modal with the name of the game, the instruction and the categories.
 
- **Bonus: choices of 2 players and a timer
+ 2. When a user chooses a category by clicking on it, the 2nd page will appear with 4 multiple-choice answers, question, message line, the animated character and steps/boxes for character to move.
 
- user clicks a button to start a game
+ 3. The user selects a certain grid with an answer by pressing a keyboard arrow
 
- user selects a certain grid with an answer by clicking on it or pressing a certain key on a keyboard
+ 4. A message pops up after an answer was selected, saying if it was correct or incorrect answer or giving a hint to solve the question for the 2nd attempt.
 
- the message pops up, if it was correct or incorrect answer
+ 5. If the answer was correct, the character will make a step.
 
- if the answer wasn't right, the hint will show up as a second chance for the user
+ 6. The above procedure will be repeated for the next questions.
 
- user selects a certain grid with an answer by clicking on it again - 2nd chance
+ 7. If the giving answer at the 2nd attempt didn't match the correct answer, game is over.
 
- if the answer was correct, the character will jump to the next grid/cell/make a step
-
- if the giving answer didn't match the original answer, game is over
-
- reset the board
-
- if the character reaches the finish box/cell, the congratulations message we will see.
-
- reset the board
+ 8. After winning or losing the user will see the message on the message line, saying to click on this message line (now it becomes a button) to go back to the selection page. Or the user can refresh the current page to start the same topic of questions over and try again.

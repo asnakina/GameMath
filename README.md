@@ -1,25 +1,27 @@
-# Project1
+                                     Project1
 
 ## About the game:
-it's a browser version of the game, that is for fun, educating you, checking your IQ or just revising on knowledge.
+It's a browser version of the game to fun way to test your IQ, educate yourself, and revise on your knowledge.
 
-## When the question pops up and a variety of answers
-Choose a correct answer and press a button, related to the answers
+## Categories page:
+The site loads the first thing you will is the categories page with the instruction and the topics of questions.
 
-## Answering questions and moving
-If you your chosen answer was correct, the character will move to the first cube/cell
-If your answer was incorrect, you will get a hint and you will have a second chase to answer.
+## Choose a category:
+When you choose a theme by clicking on it, the 2nd page will appear with 4 multiple-choice answers, question, message line, the animated character and steps/boxes for character to move.
+
+## When a question appears and a variety of answers:
+Choose a correct answer by press a keyboard arrow, which correlates to the answer
+
+## Answering questions and moving forward:
+If your chosen answer was correct, the character will move to the next box/step
+If your answer was incorrect, you will get a hint and have a 2nd chance to answer it.
 If your 2nd answer was wrong, the game is over.
 
-## Decoration objets on the board
-You will see some trees/pyramids/flowers/or other objects.
-There are just for objects, your character won't crash into them.
+## Winning conditions:
+When your character gave all correct answers on the questions, it will be standing on the finish platform/box and rotating, signifying successfully completion of the quiz. After winning
+the user will see the message on the message line, saying to click on this message line (now it becomes a button) to go back to the selection page.
 
-## Winning conditions
-When your character gave correct answers on questions, it will be standing on the finish cube/cell.
+##Losing conditions:
+After losing you will see the message on the message line, saying to click on this area (now it becomes a button) to go back to the selection page. Or you can refresh the current page to start the same topic of questions over and try again.
 
-Good luck! Enjoy your game, design and your smartness!
-
-
-## Choose a background (bonus: There might be subject of questions and a character and time settings and 2nd player)
-The user will have options for choosing background for the game.
+Good luck and enjoy the game!

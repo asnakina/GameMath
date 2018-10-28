@@ -1,4 +1,4 @@
-//Declaring global variables:
+                       //Declaring global variables:
 let currentQuestion = 0;
 //saying shownHint = false/undefined;
 let shownHint;
@@ -15,113 +15,113 @@ const questAnswVariety = {
       question: "what is 2+2?",
       choices: [8, 2, 5, 4],
       correctAnswer: 4,
-      hint: "There is a hint for question 1"
+      hint: "1+1 = 2. Think about 2+2 now"
     },
     {
       question: "what is 3*5?",
       choices: [10, 4, 15, 40],
       correctAnswer: 15,
-      hint: "There is a hint for question 2"
+      hint: "1*5 = 5 and 2*5 = 10. Think about 3*5 now"
     },
     {
       question: "what is 50-5?",
       choices: [1, 45, 3, 41],
       correctAnswer: 45,
-      hint: "There is a hint for question 3"
+      hint: "10-5 = 5 and 20-5 = 15.Think about 50-5 now"
     },
     {
-      question: "what is 1+1?",
-      choices: [1, 2, 3, 4],
-      correctAnswer: 2,
-      hint: "There is a hint for question 4"
+      question: "what is 2^3?",
+      choices: [8, 6, 3, 4],
+      correctAnswer: 8,
+      hint: "2^2 = 4 and 1^3 = 1.Think about 2^3 now"
     },
     {
-      question: "what is 10-3?",
-      choices: [10, 4, 15, 7],
-      correctAnswer: 7,
-      hint: "There is a hint for question 5"
+      question: "what is (10-3)*10?",
+      choices: [10, 70, 15, 7],
+      correctAnswer: 70,
+      hint: "(2+3)*8 = 40. Think about (10-3)*10 now"
     },
     {
-      question: "what is 81%9?",
+      question: "what is 81/9?",
       choices: [1, 6, 9, 8],
       correctAnswer: 9,
-      hint: "There is a hint for question 6"
+      hint: "99/9 = 11. Think about 81/9 now"
     }
   ],
   javascript: [
     {
-      question: "Arrays start at...",
-      choices: [8, 2, 5, 0],
-      correctAnswer: 0,
-      hint: "There is a hint for question 1"
+      question: "How long did it take to develop the scripting language JS which was then known as Mocha?",
+      choices: ['1 year', '1 year and 10 months', '10 months', '10 days'],
+      correctAnswer: '10 days',
+      hint: "It took Eich such a short time to develop the scripting language"
+    },
+    {
+      question: "[1, 2, 3] + [4, 5, 6] equals: ",
+      choices: ['[5, 7, 9]', '[14, 25, 36]', '[1, 2, 34, 5, 6]', "'1, 2, 34, 5, 6'"],
+      correctAnswer: "'1, 2, 34, 5, 6'",
+      hint: "I won't be an array anymore"
+    },
+    {
+      question: "What category of this function is: const greet=()=>{}",
+      choices: ['function declaration', 'arrow function', 'function expression', 'not a function'],
+      correctAnswer: 'arrow function',
+      hint: "The name will contain the symbol in this formula"
+    },
+    {
+      question: "What equivalents to If/Else statement?",
+      choices: ['for loop', 'switch statement', 'forEach loop', 'while loop'],
+      correctAnswer: 'switch statement',
+      hint: "for loop already equivalents while loop"
+    },
+    {
+      question: "What will this evaluate to: NaN == NaN?",
+      choices: ['true', 'correct', 'false', 'undefined'],
+      correctAnswer: 'false',
+      hint: "NaN doesn't equal anything, even itself"
+    },
+    {
+      question: "How to get the last index of a string in Javascript?",
+      choices: ['string.length + 1', 'string.length', 'string.length - 1', 'string.last'],
+      correctAnswer: 'string.length - 1',
+      hint: "If we have an array: let array = [1, 2]; then 1 will have index 0, 2 will have index 1"
+    }
+  ],
+  generalKnowledge: [
+    {
+      question: "The bacteriologist who discovered penicillin was?",
+      choices: ['Albert Einstein', 'Dmitri Mendeleev', 'Charles Darwin', 'Alexander Fleming'],
+      correctAnswer: 'Alexander Fleming',
+      hint: "He was Scottish bacteriologist"
     },
     {
       question: "What fruit represents New Zealand?",
       choices: ['kiwi', 'banana', 'peach', 'orange'],
       correctAnswer: 'kiwi',
-      hint: "There is a hint for question 2"
+      hint: "Same name bird is a symbol of this country"
     },
     {
-      question: "what is 50-5?",
-      choices: [1, 45, 3, 41],
-      correctAnswer: 45,
-      hint: "There is a hint for question 3"
+      question: "New York State is known as...?",
+      choices: ['Lonestar State', 'Empire State', 'Trump State', '5 Borough State'],
+      correctAnswer: 'Empire State',
+      hint: "What was the tallest building in the world from 1931-1970?"
     },
     {
-      question: "what is 1+1?",
-      choices: [1, 2, 3, 4],
-      correctAnswer: 2,
-      hint: "There is a hint for question 4"
+      question: "The purest form of water can be obtained from: ",
+      choices: ['a deep tubewell', 'a running stream', 'a hot water spring', 'a heavy shower of rain'],
+      correctAnswer: 'a heavy shower of rain',
+      hint: "There was a reason how people collected water thousands of years ago"
     },
     {
-      question: "what is 10-3?",
-      choices: [10, 4, 15, 7],
-      correctAnswer: 7,
-      hint: "There is a hint for question 5"
+      question: "In which of the following pairs, the two substances forming the pair are chemically most dissimilar?",
+      choices: ['Sugar and paper', 'Butter and paraffin wax', 'Chalk and marble', '	Charcoal and diamond'],
+      correctAnswer: 'Butter and paraffin wax',
+      hint: "Sugar and paper are both Carbohydrates.Chalk and marble are from Calcium.Charcoal and diamond are different forms of Carbon."
     },
     {
-      question: "what is 81%9?",
-      choices: [1, 6, 9, 8],
-      correctAnswer: 9,
-      hint: "There is a hint for question 6"
-    }
-  ],
-  generalKnowledge: [
-    {
-      question: "what is 2+2?",
-      choices: [8, 2, 5, 4],
-      correctAnswer: 4,
-      hint: "There is a hint for question 1"
-    },
-    {
-      question: "what is 3*5?",
-      choices: [10, 4, 15, 40],
-      correctAnswer: 15,
-      hint: "There is a hint for question 2"
-    },
-    {
-      question: "what is 50-5?",
-      choices: [1, 45, 3, 41],
-      correctAnswer: 45,
-      hint: "There is a hint for question 3"
-    },
-    {
-      question: "what is 1+1?",
-      choices: [1, 2, 3, 4],
-      correctAnswer: 2,
-      hint: "There is a hint for question 4"
-    },
-    {
-      question: "what is 10-3?",
-      choices: [10, 4, 15, 7],
-      correctAnswer: 7,
-      hint: "There is a hint for question 5"
-    },
-    {
-      question: "what is 81%9?",
-      choices: [1, 6, 9, 8],
-      correctAnswer: 9,
-      hint: "There is a hint for question 6"
+      question: "Which is the longest river in the world?",
+      choices: ['Mississippi', 'Nile', 'Amazon', 'Yangtze'],
+      correctAnswer: 'Amazon',
+      hint: "The name of this river is taken by one of the successful modern companies selling products in Internet"
     }
   ]
 }
@@ -146,7 +146,7 @@ function pickTopic(topic) {
   questionsAnswers = questAnswVariety[topic];
 }
 
-  document.querySelector('#messageLineId p').textContent = "Welcome to the Game!"
+  document.querySelector('#messageLineId p').textContent = "Welcome to the Game!The quiestion is below.The answers are above."
 
 //Creating start position and characters;
 function placeCharacter(place) {
@@ -170,8 +170,9 @@ function showQuestAnsw() {
 function matchGuess(value) {
   if(value === questionsAnswers[currentQuestion].correctAnswer.toString()) {
   //console.log('works');
-  document.querySelector('#messageLineId p').textContent = "That is correct answer!"
+  document.querySelector('#messageLineId p').textContent = "Your previous answer was correct! Here is your next question: "
   //console.log('Correct!Congratulations!');
+  // winSound.play();
   nextQuestion();
   }
   else if (!shownHint) {
@@ -180,16 +181,18 @@ function matchGuess(value) {
   }
   else {
   document.querySelector('#messageLineId p').textContent = `That was incorrect answer again. Game over. Correct answer was: ${questionsAnswers[currentQuestion].correctAnswer}`
-  qBox.innerText = "Click to pick a new topic"
-  
-  //qBox.addEventListener('click', ()=>location.reload());
-  console.log('locat.reload works');
+  qBox.innerText = "Click to pick a new topic";
+  // failSound.play();
 
-    // let button = document.createElement('div');
-    // button.id = "buttonId";
-    // document.querySelector('#buttonId').appendChild(character);
-    // qBox.innerText = document.querySelector('#')
-    // location.reload();
+  qBox.addEventListener('click', ()=>location.reload());
+  // console.log('locat.reload works');
+  //or
+  //let outOfModal2 = ()=>location.reload();
+  //qBox.addEventListener('click', outOfModal2);
+
+  qBox.addEventListener('click', outOfModal);
+
+  // qBox.addEventListener('click', outOfModal(e));
 
   // console.log('Game over');
   // console.log('Showing the correct answer');
@@ -200,7 +203,7 @@ function matchGuess(value) {
   }
 }
 
-document.addEventListener('keydown', (e) => {
+ document.addEventListener('keydown', (e) => {
   e.preventDefault();
   if(gameOver) return;
   let value;
@@ -208,28 +211,25 @@ document.addEventListener('keydown', (e) => {
     case 37:
       const left = document.querySelector('#left');
       value = left.innerText
+      // value.style.backgroundColor = red;
       // console.log(value);
        matchGuess(value)
-       // animationFunction();
        break;
     case 38:
        const top = document.getElementById('top');
        value = top.innerText
        // console.log(value);
         matchGuess(value)
-        // animationFunction();
        break;
    case 39:
        const right = document.querySelector('#right');
        value = right.innerText
        matchGuess(value)
-       // animationFunction();
        break;
    case 40:
        const down = document.querySelector('#bottom');
        value = down.innerText
        matchGuess(value)
-       // animationFunction();
        break;
   }
 });
@@ -237,6 +237,7 @@ document.addEventListener('keydown', (e) => {
 function start() {
   // debugger
   //to hide text on start box when the game begins
+  let currentQuestion = 0;
   const currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
   currentQuestionBox.querySelector('p').classList.add('hidden');
 }
@@ -275,71 +276,52 @@ function nextQuestion() {
 }
 
 function victory() {
-  qBox.innerText = 'Refresh page to start over';
+  qBox.innerText = 'Click to pick a new topic';
+  qBox.addEventListener('click', ()=>location.reload());
+  console.log('locat.reload works');
   for(let i = 0; i < 4; i++) {
     answersElem[i].innerHTML = '';
   }
   document.querySelector('#messageLineId p').textContent = "You win!"
   character.classList.add('animMoveWin');
+  winSound.play();
   //character.querySelector('characterId').classList.add('.animMoveWin');
-  //- is it correct?
   end();
 }
 
-//Hint appears:
+            //Hint appears:
 function hintAppears() {
   shownHint = true;
   document.querySelector('#messageLineId p').textContent = questionsAnswers[currentQuestion].hint;
   console.log(questionsAnswers[currentQuestion].hint);
 }
 
- start();
+let mainPageSound;
+let winSound;
+let failSound;
+let keySound;
+function preload() {
+  mainPageSound = loadSound('sounds/mainPageAudio.mp3');
+  winSound = loadSound('sounds/winAudio.mp3');
+  failSound = loadSound('sounds/failAudio.mp3');
+  keySound = loadSound('sounds/keySound.mp3');
+  console.log(sounds);
+//  mainPageSound.playMode('restart');
+//  winSound.play();
+//  failSound.play();
+//  keySound.play())
 
- //Reset the board/next question:
- //should we call the start() for reset?
- //function restartBoard(){
- //
- //Create Welcome page with 3 options of topics: "JavaScript", "general knoweledge", "nature".
- //Add some animations to characters
 
- //Trying to use animation through JS
-// function animationFunction() {
-//   // debugger
-// let animation = setInterval(function(){
-//   if (character.offsetLeft > 100){
-//   console.log(character.offsetLeft);
-//   clearInterval (animation);
-//   let animation2 = setInterval(function() {
-//     if (character.offsetLeft < 20) {
-//       clearInterval (animation2);
-//     } else {
-//       character.style.left = character.offsetLeft - 1 + 'px';
-//     }
-//   }, 20);
+  // let audioFirstPage = document.createElement('audio');
+  // character.id = "audioId";
+  // document.querySelector('#headerModal').appendChild(character);
+  // // let soundFirstPage = document.getElementById('audioId');
+  // audioFirstPage.play();
+}
+
+// function changeColor() {
+//   let answersElem = document.querySelectorAll('.answersClass p');
+//   answersElem.getElementById('.answersClass p').style.visibility = 'hidden';
 // }
-// else {
-//   console.log(character.offsetLeft);
-//   character.style.left = character.offsetLeft + 1 + 'px';
-//   }
-//  }, 20);
-// }
-// animationFunction();
 
-
-// function chooseTopics(value) {
-// document.querySelector('#characterId').addEventListener('click', nextQuestion);
-// if(value === questionsAnswers[currentQuestion].correctAnswer.toString()){
-//console.log('works');
-
-// Use click/move action: document.querySelector('#characterId').addEventListener('click', nextQuestion);
-
-// function winningConditions(){}
-// function scores(input) {
-//   for(let i = 0; i <questionsAnswers[i].length; i++){
-//   if(input === questionsAnswers[currentQuestion].correctAnswer){
-//   scores += 1;
-// }
-//   else {
-//     hintAppears();
-//   }
-//  }
+  start();
