@@ -1,16 +1,16 @@
-/* html {
-    background: url('images/bkg1.jpg'); */
-/* } */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-                          /* Modal/beginning page */
+                          /* Modal/start page */
+.clear-fix  {
+  clear: both;
+}
+
 #modal {
   position: fixed;
-  /* background-color: white; */
   background: linear-gradient(0deg, rgba(255, 121, 121,1.0) 0%, rgba(224, 86, 253,1.0) 30%, rgba(199,236,238, 1.0)60%, rgba(48, 51, 107,1.0)100%);)
   background-repeat: no-repeat;
   display: flex;
@@ -40,36 +40,38 @@
   font-size: 50px;
   margin-top: 50px;
   color: white;
+  clear: both;
 }
 
 #instruction {
   width: 60%;
   height: 200px;
-  margin-left: 150px;;
+  margin-left: 150px;
+  clear: both;
 }
 
 /* ul {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    position: relative;
-    padding-left: 5px; /* text distance to icon */
+  position: relative;
+  padding-left: 5px; /* text distance to icon */
 /* }
 
 li:before {
-        font-family: 'my-icon-font';
-        content: url('images/icon1.png');
-        position: absolute;
-        left: 10px;
-        top: 10px; */
+  font-family: 'my-icon-font';
+  content: url('images/icon1.png');
+  position: absolute;
+  left: 10px;
+  top: 10px; */
 
 /* li:before {
   content: url('images/icon1.png');
   display: inline-block; */
 
 /* ul {
-    list-style-image: url('images/icon1.png');
+  list-style-image: url('images/icon1.png');
 } */
 
 #instruction > li {

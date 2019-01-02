@@ -2,12 +2,11 @@
 let currentQuestion = 0;
 //saying shownHint = false/undefined;
 let shownHint;
+//saying that gameOver = false/undefined;
 let gameOver;
 let hint = document.querySelector('#hintId');
-//let scores = 0;
-//character.setAttribute('style', 'background-image: url("images/nerd4.jpg")');
 const qBox = document.querySelector('#questBox p');
-let answersElem = document.querySelectorAll('.answersClass p');
+let answersElem = document.querySelectorAll('.answersClass');
 
 const questAnswVariety = {
   math: [
@@ -59,7 +58,7 @@ const questAnswVariety = {
       question: "[1, 2, 3] + [4, 5, 6] equals: ",
       choices: ['[5, 7, 9]', '[14, 25, 36]', '[1, 2, 34, 5, 6]', "'1, 2, 34, 5, 6'"],
       correctAnswer: "'1, 2, 34, 5, 6'",
-      hint: "I won't be an array anymore"
+      hint: "It won't be an array anymore"
     },
     {
       question: "What category of this function is: const greet=()=>{}",
@@ -129,134 +128,125 @@ const questAnswVariety = {
 let questionsAnswers;
 
 function outOfModal(e) {
-  // debugger
+  //without e.preventDefault() the page tries to a categories page and can't
   e.preventDefault();
+  // mainPageSound.stop();
   //"this" - it's "e.currentTarget"
-  //we match id names and names of topics
+  //we match id names and names of categories
   questionsAnswers = questAnswVariety[this.id];
-  console.log(this.id);
+  // console.log(this.id);
   document.getElementById('modal').style.visibility = 'hidden';
   showQuestAnsw();
 }
+
   document.querySelectorAll('.topics').forEach(oneOftopics => {
   oneOftopics.addEventListener('click', outOfModal);
 });
 
-function pickTopic(topic) {
-  questionsAnswers = questAnswVariety[topic];
-}
+document.querySelector('#messageLineId p').textContent = "Welcome to the Game!The quiestion is below.The answers are above."
 
-  document.querySelector('#messageLineId p').textContent = "Welcome to the Game!The quiestion is below.The answers are above."
-
-//Creating start position and characters;
+//Creating the character and it's start position:
 function placeCharacter(place) {
   let character = document.createElement('div');
   character.id = "characterId";
-  //let startBox = document.querySelector('#boxId${i+1}')
+  //character.setAttribute('style', 'background-image: url("images/nerd4.jpg")');
   document.querySelector('#box0').appendChild(character);
+  //let startBox = document.querySelector('#boxId${i+1}')
 }
   placeCharacter();
+
   let character = document.querySelector('#characterId');
 
-//Placing questions into question field
+//Placing questions into the question field - qBox.And placing answers into answer's fields;
 function showQuestAnsw() {
   qBox.innerText = questionsAnswers[currentQuestion].question;
   for(let i = 0; i <questionsAnswers[currentQuestion].choices.length; i++) {
   answersElem[i].innerHTML = questionsAnswers[currentQuestion].choices[i];
   }
 }
-// showQuestAnsw();
 
 function matchGuess(value) {
-  if(value === questionsAnswers[currentQuestion].correctAnswer.toString()) {
-  //console.log('works');
-  document.querySelector('#messageLineId p').textContent = "Your previous answer was correct! Here is your next question: "
-  //console.log('Correct!Congratulations!');
-  // winSound.play();
-  nextQuestion();
-  }
-  else if (!shownHint) {
-  hintAppears()
-  console.log('hint is here')
-  }
-  else {
-  document.querySelector('#messageLineId p').textContent = `That was incorrect answer again. Game over. Correct answer was: ${questionsAnswers[currentQuestion].correctAnswer}`
-  qBox.innerText = "Click to pick a new topic";
-  // failSound.play();
-
-  qBox.addEventListener('click', ()=>location.reload());
-  // console.log('locat.reload works');
-  //or
-  //let outOfModal2 = ()=>location.reload();
-  //qBox.addEventListener('click', outOfModal2);
-
-  qBox.addEventListener('click', outOfModal);
-
-  // qBox.addEventListener('click', outOfModal(e));
-
-  // console.log('Game over');
-  // console.log('Showing the correct answer');
-  for(let i = 0; i < 4; i++) {
-    answersElem[i].innerHTML = '';
-  }
-  end();
+  if (value === questionsAnswers[currentQuestion].correctAnswer.toString()) {
+    document.querySelector('#messageLineId p').textContent = "Your previous answer was correct! Here is your next question: "
+    //nextQuestion();
+    setTimeout(() => nextQuestion(), 500); //delay to show selected answer for 500ms before going to tne next question
+  } else if (!shownHint) {
+    setTimeout(() => changeColor(), 500);  //delay to show selected answer for 500ms before clearing the background
+    hintAppears();
+  } else {
+    document.querySelector('#messageLineId p').textContent = `That was incorrect answer again. Game over. Correct answer was: ${questionsAnswers[currentQuestion].correctAnswer}`
+    qBox.innerText = "Click to pick a new topic";
+    qBox.addEventListener('click', () => location.reload());
+    for(let i = 0; i < 4; i++) {
+      answersElem[i].innerHTML = '';
+    }
+    end();
   }
 }
 
  document.addEventListener('keydown', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
+  keySound.play();
   if(gameOver) return;
   let value;
   switch(e.keyCode) {
     case 37:
       const left = document.querySelector('#left');
-      value = left.innerText
-      // value.style.backgroundColor = red;
-      // console.log(value);
-       matchGuess(value)
-       break;
+      left.style.background = 'red';
+      value = left.innerText;
+      // or value = document.querySelector('#left').innerText;
+      matchGuess(value);
+      break;
     case 38:
-       const top = document.getElementById('top');
-       value = top.innerText
-       // console.log(value);
-        matchGuess(value)
-       break;
-   case 39:
-       const right = document.querySelector('#right');
-       value = right.innerText
-       matchGuess(value)
-       break;
-   case 40:
-       const down = document.querySelector('#bottom');
-       value = down.innerText
-       matchGuess(value)
-       break;
+      const top = document.getElementById('top');
+      top.style.background = 'red';
+      value = top.innerText;
+      matchGuess(value);
+      break;
+    case 39:
+      const right = document.querySelector('#right');
+      right.style.background = 'red';
+      value = right.innerText;
+      matchGuess(value);
+      break;
+    case 40:
+      const down = document.querySelector('#bottom');
+      down.style.background = 'red';
+      value = down.innerText;
+      matchGuess(value);
+      break;
   }
 });
 
 function start() {
-  // debugger
+  preload();
+  // mainPageSound.play();
   //to hide text on start box when the game begins
-  let currentQuestion = 0;
+  currentQuestion = 0;
   const currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
+  //we find <p> inside the box and give it a class "hidden" with display: none
   currentQuestionBox.querySelector('p').classList.add('hidden');
 }
   //document.addEventListener('keydown', e);
   //}
 
 function end() {
+  changeColor();
+  failSound.play();
   gameOver = true;
   //document.removeEventListener('keydown', e);
 }
 
 function nextQuestion() {
   //first - finding the current box with the character
-  //second - we find <p> inside that box, this <p> has class "hidden"
-  //we remove that class, then we increase currentQuestion by 1
-  //and add class 'hidden' to <p> of new current box
+  //second - we find <p> inside that box, this <p> has class "hidden" with display: none
+  //we remove that class and the character, then we increase currentQuestion by 1
+  //and add the class 'hidden' to <p> of new current box and place the character as well
   let currentQuestionBox = document.querySelector(`#box${currentQuestion}`)
   currentQuestionBox.querySelector('p').classList.remove('hidden');
   currentQuestionBox.removeChild(character);
+
+  changeColor();
 
   currentQuestion += 1;
 
@@ -277,12 +267,11 @@ function nextQuestion() {
 
 function victory() {
   qBox.innerText = 'Click to pick a new topic';
-  qBox.addEventListener('click', ()=>location.reload());
-  console.log('locat.reload works');
+  qBox.addEventListener('click', () => location.reload());
   for(let i = 0; i < 4; i++) {
     answersElem[i].innerHTML = '';
   }
-  document.querySelector('#messageLineId p').textContent = "You win!"
+  document.querySelector('#messageLineId p').textContent = "You win! Congratulations!"
   character.classList.add('animMoveWin');
   winSound.play();
   //character.querySelector('characterId').classList.add('.animMoveWin');
@@ -293,35 +282,28 @@ function victory() {
 function hintAppears() {
   shownHint = true;
   document.querySelector('#messageLineId p').textContent = questionsAnswers[currentQuestion].hint;
-  console.log(questionsAnswers[currentQuestion].hint);
 }
 
+            //Sounds:
 let mainPageSound;
 let winSound;
 let failSound;
 let keySound;
 function preload() {
-  mainPageSound = loadSound('sounds/mainPageAudio.mp3');
-  winSound = loadSound('sounds/winAudio.mp3');
-  failSound = loadSound('sounds/failAudio.mp3');
-  keySound = loadSound('sounds/keySound.mp3');
-  console.log(sounds);
-//  mainPageSound.playMode('restart');
-//  winSound.play();
-//  failSound.play();
-//  keySound.play())
-
-
-  // let audioFirstPage = document.createElement('audio');
-  // character.id = "audioId";
-  // document.querySelector('#headerModal').appendChild(character);
-  // // let soundFirstPage = document.getElementById('audioId');
-  // audioFirstPage.play();
+  // console.log('sounds');
+  mainPageSound = new Audio('./sounds/mainPageAudio.mp3');
+  winSound = new Audio('./sounds/winAudio.mp3');
+  failSound = new Audio('./sounds/failAudio.mp3');
+  keySound = new Audio('./sounds/keySound.mp3');
+  //yesSound = loadSound('./sounds/yesAudio.mp3');
 }
 
-// function changeColor() {
-//   let answersElem = document.querySelectorAll('.answersClass p');
-//   answersElem.getElementById('.answersClass p').style.visibility = 'hidden';
-// }
+             //Colors:
+function changeColor() {
+  let answersElem = document.querySelectorAll('.answersClass');
+  answersElem.forEach((el) => {
+    el.style.background = '#a29bfe';
+  });
+}
 
   start();
