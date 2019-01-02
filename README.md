@@ -2,9 +2,10 @@
 ### Front-End Construction
 The front-end for this project is constructed with JavaScript, as well as HTML and CSS.
 
-### Site of this site: https://loving-wing-6933f6.netlify.com/
+### Site of this site: https://romantic-perlman-b2ea31.netlify.com
 
 ![Printscreen 1](/images/printscreen1.jpg)
+
 ![Printscreen 2](/images/printscreen2.jpg)
 
 ## About the game:
