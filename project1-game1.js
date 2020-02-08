@@ -184,39 +184,67 @@ function matchGuess(value) {
   }
 }
 
- document.addEventListener('keydown', (e) => {
-  // e.preventDefault();
-  keySound.play();
-  if(gameOver) return;
-  let value;
-  switch(e.keyCode) {
-    case 37:
-      const left = document.querySelector('#left');
-      left.style.background = 'red';
-      value = left.innerText;
-      // or value = document.querySelector('#left').innerText;
-      matchGuess(value);
-      break;
-    case 38:
-      const top = document.getElementById('top');
-      top.style.background = 'red';
-      value = top.innerText;
-      matchGuess(value);
-      break;
-    case 39:
-      const right = document.querySelector('#right');
-      right.style.background = 'red';
-      value = right.innerText;
-      matchGuess(value);
-      break;
-    case 40:
-      const down = document.querySelector('#bottom');
+const left = document.querySelector('#left');
+left.addEventListener('click', () => {
+  left.style.background = 'red';
+  value = left.innerText;
+  matchGuess(value);
+});
+
+const down = document.querySelector('#bottom');
+down.addEventListener('click', () => {
       down.style.background = 'red';
       value = down.innerText;
       matchGuess(value);
-      break;
-  }
 });
+
+const topP = document.getElementById('top');
+topP.addEventListener('click', () => {
+      topP.style.background = 'red';
+      value = topP.innerText;
+      matchGuess(value);
+});
+
+const right = document.querySelector('#right');
+right.addEventListener('click', () => {
+      right.style.background = 'red';
+      value = right.innerText;
+      matchGuess(value);
+});
+
+//  document.addEventListener('keydown', (e) => {
+//   // e.preventDefault();
+//   keySound.play();
+//   if(gameOver) return;
+//   let value;
+//   switch(e.keyCode) {
+//     case 37:
+//       const left = document.querySelector('#left');
+//       left.style.background = 'red';
+//       value = left.innerText;
+//       // or value = document.querySelector('#left').innerText;
+//       matchGuess(value);
+//       break;
+//     case 38:
+//       const top = document.getElementById('top');
+//       top.style.background = 'red';
+//       value = top.innerText;
+//       matchGuess(value);
+//       break;
+//     case 39:
+//       const right = document.querySelector('#right');
+//       right.style.background = 'red';
+//       value = right.innerText;
+//       matchGuess(value);
+//       break;
+//     case 40:
+//       const down = document.querySelector('#bottom');
+//       down.style.background = 'red';
+//       value = down.innerText;
+//       matchGuess(value);
+//       break;
+//   }
+// });
 
 function start() {
   preload();

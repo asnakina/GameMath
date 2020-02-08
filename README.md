@@ -2,7 +2,7 @@
 ### Front-End Construction
 The front-end for this project is constructed with JavaScript, as well as HTML and CSS.
 
-### Site of this site: https://romantic-perlman-b2ea31.netlify.com
+## The link to this deployed project via Netlify: https://romantic-perlman-b2ea31.netlify.com
 
 ![Printscreen 1](/images/printscreen1.jpg)
 
