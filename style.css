@@ -212,7 +212,7 @@ h1 {
 
 #messageLineId {
   width: 100%;
-  height: 70px;
+  padding: 10px;
   background: #F1E0C5;
   margin: 0 auto;
   font-size: 33px;
@@ -332,4 +332,14 @@ h1 {
   #instruction > li {
     font-size: 14px;
   }
+
+  .boxes {
+    width: 100%;
+    height: auto;
+  }
+
+  section {
+    font-size: 12px!important;
+  }
+
 }
