@@ -146,7 +146,7 @@ body {
 
 section {
   background: white;
-  width: 1220px;
+  max-width: 1220px;
   height: 100%;
   margin-left: 200px;
   border: solid black;
@@ -319,6 +319,10 @@ h1 {
     height: 300px; 
     width: 100%;
     object-fit: cover;
+  }
+
+  .topics span {
+    font-size: 14px;
   }
 
   #headerModal > h1 {
