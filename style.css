@@ -322,10 +322,10 @@ h1 {
   }
 
   #headerModal > h1 {
-    font-size: 100px;
+    font-size: 20px;
   }
 
   #instruction > li {
-    font-size: 45px;
+    font-size: 14px;
   }
 }
